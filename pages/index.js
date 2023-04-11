@@ -43,6 +43,7 @@ function formSubmitHandler (evt) {
     popupName = document.querySelector('popup__form-input_input-name').value;
     popupJob = document.querySelector('popup__form-input_input-job').value;
 
+
 let putProfileName = document.querySelector('profile__title');
 let putProfileJob = document.querySelector('profile__subtitle');
 
