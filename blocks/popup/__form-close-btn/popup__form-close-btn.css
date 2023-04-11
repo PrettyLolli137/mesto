@@ -1,4 +1,4 @@
-.popup__close-btn {
+.popup__form-close-btn {
     all             : unset;
     position        : absolute;
    bottom: 320px;
@@ -11,16 +11,16 @@
 }
 
 
-.popup__close-btn:hover {
+.popup__form-close-btn:hover {
     opacity: 0.6;
 }
 
-.popup__close-btn:active {
+.popup__form-close-btn:active {
     opacity: 1;
 }
 
 @media screen and (min-width:1280px) {
-    .popup__close-btn {
+    .popup__form-close-btn {
         position        : absolute;
         bottom: 333px;
        left: 430px;

@@ -8,6 +8,31 @@
     padding-bottom: 48px;
 }
 
+@media screen and (min-width: 768px) {
+    .group {
+        margin: 0 auto;
+      
+      
+        width: 584px;        
+        gap           : 20px;
+        padding-bottom: 48px;
+    }
+
+}
+@media screen and (min-width: 1024px) {
+    .group {
+        margin: 0 auto;
+      
+      
+        width: px;        
+        gap           : 20px;
+        padding-bottom: 48px;
+    }
+
+}
+
+
+
 @media screen and (min-width: 1280px) {
     .group {
         margin: 0 auto;
