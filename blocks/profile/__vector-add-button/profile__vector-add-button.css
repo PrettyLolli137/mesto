@@ -1,14 +1,12 @@
 .profile__vector-add-button {
     margin: 0;
-    Width: 16px;
-Height: 16px;
-padding-top: 5px;
-
+    width: 16px;
+    height: 16px;
+    padding-top: 5px;
 }
 
-@media screen and (min-width:1280px) {
+@media screen and (min-width: 1280px) {
     .profile__vector-add-button {
         height: 22px;
-
-}
+    }
 }

@@ -1,11 +1,10 @@
 .profile__avatar {
-    margin       : 0;
-padding-bottom: 22.25px;   
-
+    margin: 0;
+    padding-bottom: 22.25px;
 }
 
-@media screen and (min-width:1280px) {
+@media screen and (min-width: 1280px) {
     .profile__avatar {
-   padding: 0;
+        padding: 0;
     }
 }

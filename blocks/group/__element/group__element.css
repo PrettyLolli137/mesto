@@ -1,8 +1,6 @@
 .group__element {
-    margin        : 0 auto;
+    margin: 0 auto;
     padding: 0;
-    width         : 282px;
-   
+    width: 282px;
     list-style: none;
-
 }

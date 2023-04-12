@@ -3,44 +3,32 @@
     width: 282px;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(282px, 1fr));
-    
-    gap           : 20px;
+    gap: 20px;
     padding-bottom: 48px;
 }
 
 @media screen and (min-width: 768px) {
     .group {
         margin: 0 auto;
-      
-      
-        width: 584px;        
-        gap           : 20px;
+        width: 584px;
+        gap: 20px;
         padding-bottom: 48px;
     }
-
 }
 @media screen and (min-width: 1024px) {
     .group {
         margin: 0 auto;
-      
-      
-        width: px;        
-        gap           : 20px;
+        width: 928px;
+        gap: 17px;
         padding-bottom: 48px;
     }
-
 }
-
-
 
 @media screen and (min-width: 1280px) {
     .group {
         margin: 0 auto;
         width: 880px;
-    
         gap: 17px;
         padding-bottom: 66px;
     }
-
-
 }
