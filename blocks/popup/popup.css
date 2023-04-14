@@ -5,13 +5,10 @@
     bottom: 0;
     left: 0;
     right: 0;
-    width: 282px;
     display: none;
+    width: 282px;
     padding: 123px 19px 0;
     font-family: "Inter", Arial, Helvetica, sans-serif;
-    /*background:#000000;
-    opacity     : 0.5;
-    z-index     : 2;*/
 }
 
 .popup::before {

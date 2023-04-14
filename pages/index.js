@@ -1,4 +1,4 @@
-const openPopupBtn = document.querySelector(".profile__edit-button");
+const openPopupBtn = document.querySelector(".profile__edit-button_popup_opened");
 const popup = document.querySelector(".popup");
 const popupCloseBtn = document.querySelector(".popup__form-close-btn");
 const popupSaveBtn = document.querySelector(".popup__form-button-save");
@@ -12,6 +12,7 @@ function openPopup() {
     popupName.value = profileName.textContent;
     popupJob.value = profileJob.textContent;
     popup.classList.add("popup_opened");
+
 }
 
 function closePopup(evt) {
