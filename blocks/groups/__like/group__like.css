@@ -1,13 +1,14 @@
 .group__like {
     padding: 0;
-    height: 19px;
-    width: 22px;
-    margin-top: 30px;
-    z-index: 0;
+    min-width: 22px;
+    margin-right: 4px;
     transition: opacity ease-in-out 0.3s;
     cursor: pointer;
     background-color: #ffffff;
     border: none;
+    background-image: url('../../../images/Vector_like.svg');
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .group__like:hover {

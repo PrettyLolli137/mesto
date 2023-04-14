@@ -1,7 +1,7 @@
 .popup__form-close-btn {
     all: unset;
     position: absolute;
-    bottom: 320px;
+    bottom: 343px;
     left: 260px;
     width: 20px;
     height: 20px;
@@ -20,9 +20,8 @@
 
 @media screen and (min-width: 1280px) {
     .popup__form-close-btn {
-        position: absolute;
-        bottom: 333px;
-        left: 430px;
+        bottom: 347px;
+        left: 434px;
         right: 0;
         width: 32px;
         height: 32px;

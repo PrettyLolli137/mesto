@@ -9,13 +9,10 @@
 
 @media screen and (min-width: 1280px) {
     .profile {
-        margin: 0 auto;
         padding: 0;
         width: 68.8%;
-        display: flex;
         flex-direction: row;
         justify-content: space-between;
-        text-align: center;
         align-items: center;
         padding-bottom: 51px;
     }

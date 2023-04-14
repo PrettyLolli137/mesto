@@ -9,6 +9,11 @@
     border-radius: 2px;
     transition: opacity ease-in-out 0.3s;
     cursor: pointer;
+    background-image: url('../../../images/profile_vector.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+
+    
 }
 
 .profile__add-button:hover {

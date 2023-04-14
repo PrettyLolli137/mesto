@@ -12,79 +12,74 @@
         <div class="page">
             <header class="header">
                 <img src="./images/Logo.svg" alt="Лого" class="header__logo" />
-                <div class="header__line"></div>
             </header>
             <main>
                 <section class="profile">
-                    <div class="profile__avatar">
                         <img src="./images/profile__image.jpg" alt="Аватар" class="profile__image" />
-                    </div>
                     <div class="profile__info">
                         <div class="profile__informs">
                             <h1 class="profile__title">Жак-Ив Кусто</h1>
-                            <button class="profile__edit-button profile__edit-button_popup-open" type="button">
-                                <img src="./images/Vector.png" alt="Вектор" class="profile__vector" />
+                            <button class="profile__edit-button"  aria-label="Открыть" type="button">
                             </button>
                         </div>
                         <p class="profile__subtitle">Исследователь океана</p>
                     </div>
                     <button class="profile__add-button" type="button">
-                        <img src="./images/profile_vector.png" alt="Вектор" class="profile__vector-add-button" />
                     </button>
                 </section>
 
-                <section class="group">
-                    <ul class="group__element">
-                        <li class="group__rectangle">
+                <section class="groups">
+                    <ul class="group">
+                        <li class="group__element">
                             <img src="images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск" class="group__image" />
                             <div class="group__mask">
                                 <h2 class="group__text">Карачаевск</h2>
-                                <img src="./images/Vector (Stroke).png" class="group__like" />
+                                <button type="button" class="group__like"></button>
                             </div>
                         </li>
                     </ul>
-                    <ul class="group__element">
-                        <li class="group__rectangle">
+                    <ul class="group">
+                        <li class="group__element">
                             <img src="images/Elbrus.png" alt="Гора Эльбрус" class="group__image" />
                             <div class="group__mask">
                                 <h2 class="group__text">Гора Эльбрус</h2>
-                                <img src="./images/like.svg" class="group__like" />
-                            </div>
+                                <button type="button" class="group__like"></button>
+                                </div>
                         </li>
                     </ul>
-                    <ul class="group__element">
-                        <li class="group__rectangle">
+                    <ul class="group">
+                        <li class="group__element">
                             <img src="images/Dombai.png" alt="Домбай" class="group__image" />
                             <div class="group__mask">
                                 <h2 class="group__text">Домбай</h2>
-                                <img src="./images/Vector (Stroke).png" class="group__like" />
+                                <button type="button" class="group__like"></button>
                             </div>
                         </li>
                     </ul>
-                    <ul class="group__element">
-                        <li class="group__rectangle">
+                    <ul class="group">
+                        <li class="group__element">
                             <img src="images/Elbrus.png" alt="Гора Эльбрус" class="group__image" />
                             <div class="group__mask">
                                 <h2 class="group__text">Гора Эльбрус</h2>
-                                <img src="./images/Vector (Stroke).png" class="group__like" />
+                                <button type="button" class="group__like"></button>
                             </div>
                         </li>
                     </ul>
-                    <ul class="group__element">
-                        <li class="group__rectangle">
+                    <ul class="group">
+                        <li class="group__element">
                             <img src="images/Dombai.png" alt="Домбай" class="group__image" />
                             <div class="group__mask">
                                 <h2 class="group__text">Домбай</h2>
-                                <img src="./images/Vector (Stroke).png" class="group__like" />
+                                <button type="button" class="group__like"></button>
                             </div>
                         </li>
                     </ul>
-                    <ul class="group__element">
-                        <li class="group__rectangle">
+                    <ul class="group">
+                        <li class="group__element">
                             <img src="images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск" class="group__image" />
                             <div class="group__mask">
-                                <h2 class="group__text">Карачаево-Ч...</h2>
-                                <img src="./images/Vector (Stroke).png" class="group__like" />
+                                <h2 class="group__text">Карачаево-Черкесия</h2>
+                                <button type="button" class="group__like"></button>
                             </div>
                         </li>
                     </ul>
@@ -94,19 +89,17 @@
                 <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
             </footer>
         </div>
-        <div class="popup">
-            <div class="popup__content">
+        <div class="popup popup__opened">
+            <div class="popup__container">
                 <h2 class="popup__title">Редактировать профиль</h2>
-                <div class="popup__field">
                     <form class="popup__form" name="popup__form">
-                        <input type="text" placeholder="Жак-Ив Кусто" class="popup__form-input popup__form-input_input-name" name="popup__form-input popup__form-input_input-name" />
-                        <input type="text" placeholder="Исследователь океана" class="popup__form-input popup__form-input_input-job" name="popup__form-input popup__form-input_input-job" />
+                        <input type="text" placeholder="Введите Имя" class="popup__form-input popup__form-input_input-name" name="popup__form-input popup__form-input_input-name" />
+                        <input type="text" placeholder="Введите профессию" class="popup__form-input popup__form-input_input-job" name="popup__form-input popup__form-input_input-job" />
                         <button class="popup__form-button-save" type="submit">
                             Сохранить
                         </button>
                         <button class="popup__form-close-btn" type="button"></button>
                     </form>
-                </div>
             </div>
         </div>
         <script src="./pages/index.js"></script>

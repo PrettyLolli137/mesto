@@ -9,6 +9,10 @@
     transition: opacity ease-in-out 0.3s;
     cursor: pointer;
     margin-top: 45px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 17px;
 }
 
 .popup__form-button-save:hover {
@@ -24,5 +28,10 @@
         height: 50px;
         background: #000000;
         border-radius: 2px;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 22px;
+        
     }
 }
