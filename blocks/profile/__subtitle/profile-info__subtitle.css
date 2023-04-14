@@ -5,14 +5,12 @@
     font-weight: 400;
     font-size: 14px;
     line-height: 17px;
-    text-align: center;
     padding-bottom: 36px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden; 
+    overflow: hidden;
     text-align: start;
     margin-left: 19px;
-  
 }
 
 @media screen and (min-width: 1280px) {

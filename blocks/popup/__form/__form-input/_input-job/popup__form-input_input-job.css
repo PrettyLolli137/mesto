@@ -4,9 +4,8 @@
     margin-top: 30px;
     text-overflow: ellipsis;
     white-space: nowrap;
-    overflow: hidden; 
+    overflow: hidden;
     max-width: 238px;
-
 }
 
 @media screen and (min-width: 1280px) {
