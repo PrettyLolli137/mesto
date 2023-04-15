@@ -1,4 +1,4 @@
-.popup__form-input_input-name {
+.popup__form-input_input_name {
     margin: 0;
     padding-bottom: 13px;
     text-overflow: ellipsis;
@@ -8,7 +8,7 @@
 }
 
 @media screen and (min-width: 1280px) {
-    .popup__form-input_input-name {
+    .popup__form-input_input_name {
         max-width: 330px;
     }
 }
