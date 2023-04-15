@@ -4,8 +4,8 @@ const popupCloseBtn = document.querySelector(".popup__form-close-btn");
 const popupSaveBtn = document.querySelector(".popup__form-button-save");
 const profileName = document.querySelector(".profile__title");
 const profileJob = document.querySelector(".profile__subtitle");
-const popupName = document.querySelector(".popup__form-input_input_name");
-const popupJob = document.querySelector(".popup__form-input_input_job");
+const popupName = document.querySelector(".popup__input_type_name");
+const popupJob = document.querySelector(".popup__input_type_job");
 const formElement = document.querySelector(".popup__container");
 
 function openPopup() {
