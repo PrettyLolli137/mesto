@@ -5,11 +5,11 @@
     bottom: 0;
     left: 0;
     right: 0;
-    display: none;
     width: 282px;
-    padding: 123px 19px 0;
+    display: none;
     font-family: "Inter", Arial, Helvetica, sans-serif;
 }
+
 
 .popup::before {
     content: "";
@@ -32,7 +32,6 @@
         left: 0;
         right: 0;
         width: 430px;
-        display: none;
-        padding: 195px 0;
+
     }
 }

@@ -1,12 +1,6 @@
 .popup__input_type_job {
     margin: 0;
-    padding-bottom: 13px;
-    margin-top: 30px;
-    max-width: 238px;
+
 }
 
-@media screen and (min-width: 1280px) {
-    .popup__input_type_job {
-        max-width: 330px;
-    }
-}
+

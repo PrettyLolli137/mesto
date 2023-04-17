@@ -9,7 +9,7 @@
     border-radius: 2px;
     transition: opacity ease-in-out 0.3s;
     cursor: pointer;
-    background-image: url('../../../images/profile_vector.svg');
+    background-image: url('../../../images/vector_add-button.svg');
     background-repeat: no-repeat;
     background-position: center;
 
@@ -28,6 +28,8 @@
     .profile__add-button {
         margin: 0;
         width: 150px;
-        margin-left: 244px;
+        margin-left: 250px;
+        background-image: url('../../../images/profile_vector.svg');
+        margin-bottom: 25px;
     }
 }

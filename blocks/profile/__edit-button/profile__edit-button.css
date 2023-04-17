@@ -9,10 +9,9 @@
     min-width: 18px;
     height: 18px;
     border: 1px solid #ffffff;
-    background-image: url('../../../images/Vector.svg');
+    background-image: url('../../../images/vector_edit.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 7.5px;
 }
 
 .profile__edit-button:hover {
@@ -25,9 +24,8 @@
 
 @media screen and (min-width: 1280px) {
     .profile__edit-button {
-        margin: 0;
         min-width: 24px;
         height: 24px;
-        background-size: 7px;
+        background-image: url('../../../images/Vector.svg');
     }
 }
