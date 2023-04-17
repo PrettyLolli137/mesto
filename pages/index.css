@@ -21,11 +21,11 @@
 
 @import url(../blocks/groups/groups.css);
 @import url(../blocks/groups/__group/groups__group.css);
-@import url(../blocks/groups/__element/group__element.css);
-@import url(../blocks/groups/__image/group__image.css);
-@import url(../blocks/groups/__like/group__like.css);
-@import url(../blocks/groups/__text/group__text.css);
-@import url(../blocks/groups/__mask/group__mask.css);
+@import url(../blocks/groups/__element/groups__element.css);
+@import url(../blocks/groups/__image/groups__image.css);
+@import url(../blocks/groups/__like/groups__like.css);
+@import url(../blocks/groups/__text/groups__text.css);
+@import url(../blocks/groups/__mask/groups__mask.css);
 
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyright/footer__copyright.css);

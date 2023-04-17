@@ -1,4 +1,4 @@
-.group__like {
+.groups__like {
     padding: 0;
     min-width: 22px;
     margin-right: 4px;
@@ -11,11 +11,11 @@
     background-repeat: no-repeat;
 }
 
-.group__like:hover {
+.groups__like:hover {
     opacity: 0.5;
 }
 
-.group__like:active {
+.groups__like:active {
     opacity: 1;
     background-image: url("../../../images/black\ like.svg");
 }
