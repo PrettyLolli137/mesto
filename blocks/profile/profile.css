@@ -11,15 +11,13 @@
 @media screen and (min-width: 1280px) {
     .profile {
         display: grid;
-    justify-content: space-between;
-    align-items: center;
-    -ms-grid-columns: 120px 30px 1fr 30px 150px;
-    grid-template-columns: 120px 1fr 150px;
-    grid-template-rows: 1fr;
-    gap: 0 30px;
-    max-width: 880px;
-    padding-bottom: 44px;
-    text-align: left;
+        align-items: center;
+        grid-template-columns: 120px 1fr 150px;
+        grid-template-rows: 1fr;
+        gap: 0 30px;
+        max-width: 880px;
+        padding-bottom: 44px;
+        text-align: left;
 }    
     }
 
