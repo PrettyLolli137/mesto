@@ -1,12 +1,11 @@
 .profile__edit-button {
     margin: 0;
     padding: 0;
-    margin-left: 10px;
     box-sizing: border-box;
     background: #000;
     transition: opacity ease-in-out 0.3s;
     cursor: pointer;
-    min-width: 18px;
+    width: 18px;
     height: 18px;
     border: 1px solid #ffffff;
     background-image: url('../../../images/vector_edit.svg');
@@ -24,7 +23,7 @@
 
 @media screen and (min-width: 1280px) {
     .profile__edit-button {
-        min-width: 24px;
+        width: 24px;
         height: 24px;
         background-image: url('../../../images/Vector.svg');
     }

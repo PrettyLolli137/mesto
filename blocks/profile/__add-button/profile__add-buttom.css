@@ -28,8 +28,6 @@
     .profile__add-button {
         margin: 0;
         width: 150px;
-        margin-left: 250px;
         background-image: url('../../../images/profile_vector.svg');
-        margin-bottom: 25px;
     }
 }
