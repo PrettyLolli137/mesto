@@ -24,55 +24,11 @@
                         </div>
                     <p class="profile__subtitle">Исследователь океана</p>
                         </div>
-                    <button class="profile__add-button" type="button">
+                    <button class="profile__add-button profile__add-button_popup_added" type="button">
                     </button>
                 </section>
 
                 <section class="groups">
-                    <ul class="groups__group">
-                        <li class="groups__element">
-                            <img src="images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск" class="groups__image">
-                            <div class="groups__mask">
-                                <h2 class="groups__text">Карачаевск</h2>
-                                <button type="button" class="groups__like"></button>
-                            </div>
-                        </li>
-                        <li class="groups__element">
-                            <img src="images/Elbrus.png" alt="Гора Эльбрус" class="groups__image">
-                            <div class="groups__mask">
-                                <h2 class="groups__text">Гора Эльбрус</h2>
-                                <button type="button" class="groups__like"></button>
-                                </div>
-                        </li>
-                        <li class="groups__element">
-                            <img src="images/Dombai.png" alt="Домбай" class="groups__image">
-                            <div class="groups__mask">
-                                <h2 class="groups__text">Домбай</h2>
-                                <button type="button" class="groups__like"></button>
-                            </div>
-                        </li>
-                        <li class="groups__element">
-                            <img src="images/Elbrus.png" alt="Гора Эльбрус" class="groups__image">
-                            <div class="groups__mask">
-                                <h2 class="groups__text">Гора Эльбрус</h2>
-                                <button type="button" class="groups__like"></button>
-                            </div>
-                        </li>
-                        <li class="groups__element">
-                            <img src="images/Dombai.png" alt="Домбай" class="groups__image">
-                            <div class="groups__mask">
-                                <h2 class="groups__text">Домбай</h2>
-                                <button type="button" class="groups__like"></button>
-                            </div>
-                        </li>
-                        <li class="groups__element">
-                            <img src="images/kirill-pershin-1088404-unsplash.jpg" alt="Карачаевск" class="groups__image">
-                            <div class="groups__mask">
-                                <h2 class="groups__text">Карачаево-Черкесия</h2>
-                                <button type="button" class="groups__like"></button>
-                            </div>
-                        </li>
-                    </ul>
                 </section>
             </main>
             <footer class="footer">
@@ -92,6 +48,44 @@
                     </form>
             </div>
         </div>
+        <div class="popup__add">
+            <div class="popup__container">
+                <h2 class="popup__title">Новое место</h2>
+                    <form class="popup__form" name="popup__form">
+                        <input type="text" placeholder="Название" class="popup__text" name="nameAdd">
+                        <input type="link" placeholder="Ссылка на картинку" class="popup__text" name="linkAdd">
+                        <button class="popup__form-button-save" type="submit">
+                            Создать
+                        </button>
+                        <button class="popup__form-close-btn" type="button"></button>
+                    </form>
+            </div>
+        </div>
+        <!--
+        <div class="popup__images">
+            <div class="popup__images-container">
+                <button class="popup__images-closebtn" type="button"></button>
+                <figure class="popup__figure">
+                    <img class="popup__picture" src="https://im.wampi.ru/2023/04/24/Capybara-in-the-pool.jpg" alt="">
+                    <figcaption class="popup__picture-description"></figcaption>
+                </figure>
+            </div>
+        </div>
+        -->
+
+
+        <template id="card-template">
+            <ul class="groups__group">
+                <li class="groups__element">
+                    <img  class="groups__image">
+                    <button class="groups__deletebtn"></button>
+                    <div class="groups__mask">
+                        <h2 class="groups__text"></h2>
+                        <button type="button" class="groups__like groups__like_active"></button>
+                    </div>
+                </li>
+            </ul>
+        </template>
         <script src="./pages/index.js"></script>
     </body>
 </html>

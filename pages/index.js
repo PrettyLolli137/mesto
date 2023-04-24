@@ -9,6 +9,7 @@ const popupJob = document.querySelector(".popup__input_type_job");
 const formElement = document.querySelector(".popup__container");
 const formSave = document.querySelector(".popup__form");
 
+
 function openPopup() {
     popupName.value = profileName.textContent;
     popupJob.value = profileJob.textContent;
@@ -24,7 +25,7 @@ function closePopupByClick(evt) {
     }
 }
 
-function closePopup(){
+function closePopup() {
     popup.classList.remove("popup_opened");
 }
 
@@ -46,43 +47,125 @@ formSave.addEventListener("click", closePopupByClick);
 
 
 
+/* Поп ап для добавления картинок */
 
-/* openPopupBtn.onclick = () => alert('hello!');  1 вариант - это функция --->  () => alert('hello!') */
-
-/*
-function onclick () {
-    alert('hello 3!');
-}                                          2 вариант функции
+const PopupAddBtn = document.querySelector(".profile__add-button_popup_added");
+const popupNameAdd = document.querySelector(".popup__text");
+const popupAdd = document.querySelector(".popup__add");
 
 
-openPopupBtn.addEventListener('click',onclick );
+function openPopupAdd() {
+    popupNameAdd.value = cardsTitle.textContent;
+    popupAdd.classList.add("popup_added");
 
-const openPopupBtn = document.querySelector('.profile__edit-button_popup-open');
-const popup = document.querySelector('.popup');
-const popupCloseBtn = document.querySelector('.popup__form-close-btn');
-const popupName = document.querySelector('.popup__form-input_input-name');
-const popupJob = document.querySelector('.popup__form-input_input-job');
-const profileName = document.querySelector('.profile__title');
-const profileJob = document.querySelector('.profile__subtitle')
-const formElement = document.querySelector('.popup__container');
-
-function togglePopup() {
-popup.classList.toggle('popup_open');
-popupName.value = profileName.textContent;
-popupJob.value = profileJob.textContent;
+}
+function closePopupAddByClick(evt) {
+    let isOverlay = evt.target.classList.contains("popup__add");
+    let isCloseBtn = evt.target.classList.contains("popup__form-close-btn");
+    if (isOverlay || isCloseBtn) {
+        closePopupAdd();
+    }
+}
+function closePopupAdd() {
+    popupAdd.classList.remove("popup_added");
 }
 
-
-function formSubmitHandler (evt) {
-	evt.preventDefault();
-    profileName.textContent = popupName.value;
-    profileJob.textContent = popupJob.value;
+function formSubmitHandlerAdd(evt) {
+    evt.preventDefault();
+    
+    closePopup();
 }
 
+PopupAddBtn.addEventListener("click", openPopupAdd);
+popupCloseBtn.addEventListener("click", closePopupAdd);
+popupAdd.addEventListener("click", closePopupAddByClick);
+formElement.addEventListener("submit", formSubmitHandlerAdd);
+formSave.addEventListener("click", closePopupAddByClick);
 
-openPopupBtn.addEventListener('click',togglePopup );
-popupCloseBtn.addEventListener('click',togglePopup );
-formElement.addEventListener('submit', formSubmitHandler);
 
 
+
+/* Поп ап для изображений
+
+const  popupImages = document.querySelector('.popup__images');
+const popupPicture = document.querySelector('.popup__picture');
+const popupPictureDesc = document.querySelector('.popup__picture-description');
 */
+
+
+
+
+
+
+
+
+
+
+
+/* 6 карточек, лайк и мусорка */
+
+const initialCards = [
+    {
+        name: 'Капибара отдыхает',
+        link: 'https://im.wampi.ru/2023/04/24/Capybara-in-the-pool.jpg'
+    },
+    {
+        name: 'Капибара работает',
+        link: 'https://im.wampi.ru/2023/04/24/760688.jpg'
+    },
+    {
+        name: 'Капибара на интервью',
+        link: 'https://im.wampi.ru/2023/04/24/i_11zon.jpg'
+    },
+    {
+        name: 'Капибара и друзья',
+        link: 'https://ie.wampi.ru/2023/04/24/5M0V7TvZ3zON7x_11zon.jpg'
+    },
+    {
+        name: 'Капибары Уллиема Дефо',
+        link: 'https://ie.wampi.ru/2023/04/24/KAPIBARA-ZIVOTNYE-MEMY-OTSYLKI-7517954.jpg'
+    },
+    {
+        name: 'Ok I pull up',
+        link: 'https://im.wampi.ru/2023/04/24/maxresdefault-3.jpg'
+    }
+];
+
+initialCards.push();
+
+const cardTemplate = document.getElementById('card-template');
+const groupsContainer = document.querySelector('.groups');
+
+const createCardElement = (cardsData) => {
+    const cardsElement = cardTemplate.content.querySelector('.groups__group').cloneNode(true);
+
+    const cardsImage = cardsElement.querySelector('.groups__image');
+    const cardsTitle = cardsElement.querySelector('.groups__text');
+    const cardsDeleteBtn = cardsElement.querySelector('.groups__deletebtn');
+    const cardsLikeBtn = cardsElement.querySelector('.groups__like');
+
+
+
+    cardsTitle.textContent = cardsData.name;
+    cardsImage.src = cardsData.link;
+    cardsImage.alt = cardsData.name;
+
+    const handleDelete = (evt) => {
+        cardsElement.remove();
+    }
+
+    const handleLike = (evt) => {
+        evt.target.classList.toggle('groups__like_active');
+    }
+
+    cardsDeleteBtn.addEventListener('click', handleDelete);
+    cardsLikeBtn.addEventListener('click', handleLike);
+
+    return cardsElement;
+};
+
+initialCards.forEach((card) => {
+    const element = createCardElement(card);
+    groupsContainer.append(element);
+});
+
