@@ -1,8 +1,9 @@
 .popup__images-closebtn {
         all: unset;
         position: absolute;
-        bottom: 190px;
-        left: 218px;
+        top: -40px;
+        right: 0;
+        background-size: contain;
         width: 20px;
         height: 20px;
         transition: opacity ease-in-out 0.3s;
@@ -18,11 +19,10 @@
         opacity: 1;
     }
     
-    @media screen and (min-width: 1280px) {
+    @media screen and (min-width: 768px) {
         .popup__images-closebtn {
-            bottom: 555px;
-            left: 821px;
-            right: 0;
+            top: -35px;
+            right: -46px;
             width: 32px;
             height: 32px;
             background-image: url("../../../images/Close\ Icon\ \(1280px\).svg");

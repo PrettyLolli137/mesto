@@ -1,3 +1,4 @@
+/* Поп-ап редактирования профиля */
 const openPopupBtn = document.querySelector(".profile__edit-button");
 const popup = document.querySelector(".popup");
 const popupCloseBtn = document.querySelector(".popup__form-close-btn");
@@ -43,17 +44,7 @@ formElement.addEventListener("submit", formSubmitHandler);
 formSave.addEventListener("click", closePopupByClick);
 
 
-
-
-
-
-
-
-
-
-
 /* 6 карточек, лайк и мусорка */
-
 const initialCards = [
     {
         name: 'Капибара отдыхает',
@@ -82,11 +73,8 @@ const initialCards = [
     }
 ];
 
-initialCards.push();
-
 const cardTemplate = document.getElementById('card-template');
 const groupsContainer = document.querySelector('.groups');
-
 const createCardElement = (cardsData) => {
     const cardsElement = cardTemplate.content.querySelector('.groups__group').cloneNode(true);
 
@@ -95,49 +83,35 @@ const createCardElement = (cardsData) => {
     const cardsDeleteBtn = cardsElement.querySelector('.groups__deletebtn');
     const cardsLikeBtn = cardsElement.querySelector('.groups__like');
     
-
     cardsTitle.textContent = cardsData.name;
     cardsImage.src = cardsData.link;
-
     const handleDelete = () => {
         cardsElement.remove();
     };
-
     const handleLike = (evt) => {
         evt.target.classList.toggle('groups__like_active');
     };
-
     function openPopupImg (){
-
         popupDescription.textContent = cardsData.name;
         popupImages.src = cardsData.link;
-    
         popupImg.classList.add('popup_opened');
     }
-    
-    
 
     cardsImage.addEventListener('click',openPopupImg);
     cardsDeleteBtn.addEventListener('click', handleDelete);
     cardsLikeBtn.addEventListener('click', handleLike);
-   
+
     return cardsElement;
 };
-
 
 const renderAddElement = (cardsElement) => {
     groupsContainer.prepend(cardsElement)
 }
 
-
 initialCards.forEach((cards) => {
     const element = createCardElement(cards);
     renderAddElement(element);
-    
 });
-
-
-
 
 
 /* Поп ап для добавления картинок */
@@ -179,26 +153,11 @@ const handleAddFormSubmit  = (event) => {
     closePopupAdd(popupAdd);
 };
 
-
 PopupAddBtn.addEventListener("click", openPopupAdd);
 popupCloseBtn.addEventListener("click", closePopupAdd);
 popupAdd.addEventListener("click", closePopupAddByClick);
 popupAddForm.addEventListener("submit", handleAddFormSubmit);
 formSave.addEventListener("click", closePopupAddByClick);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* Поп ап для фоток */
@@ -207,8 +166,6 @@ const popupImages = document.querySelector('.popup__picture');
 const popupDescription = document.querySelector('.popup__picture-description');
 const popupImgClose = document.querySelector('.popup__images-closebtn');
 const popupImgForm = document.querySelector('.popup__images-container');
-
-
 
 function closePopupImgByClick(evt) {
     let isOverlay = evt.target.classList.contains("popup_type_img");
@@ -232,6 +189,13 @@ popupImgClose.addEventListener("click", closePopupImg);
 popupImg.addEventListener("click", closePopupImgByClick);
 popupImgForm.addEventListener("submit",handleImgClick);
 
+
+
+
+
+
+
+
 /*
 const cardsImage = cardsElement.querySelector('.groups__image');
 cardsImage.forEach((groupsImg)) => {
@@ -250,9 +214,40 @@ initialCards.forEach((cards) => {
 
 const renderAddElement = (cardsElement) => {
     groupsContainer.prepend(cardsElement)
-}
-
- popupImages.src = cardsData.link;
+}   
+    popupImages.src = cardsData.link;
     popupDescription.textContent = cardsData.name;
+
+
+
+
+    
+const initialCards = [
+    {
+        name: 'Капибара отдыхает',
+        link: 'https://im.wampi.ru/2023/04/24/Capybara-in-the-pool.jpg'
+        
+    },
+    {
+        name: 'Капибара работает',
+        link: 'https://im.wampi.ru/2023/04/24/760688.jpg'
+    },
+    {
+        name: 'Капибара на интервью',
+        link: 'https://im.wampi.ru/2023/04/24/i_11zon.jpg'
+    },
+    {
+        name: 'Капибара и друзья',
+        link: 'https://ie.wampi.ru/2023/04/24/5M0V7TvZ3zON7x_11zon.jpg'
+    },
+    {
+        name: 'Капибары Уллиема Дефо',
+        link: 'https://ie.wampi.ru/2023/04/24/KAPIBARA-ZIVOTNYE-MEMY-OTSYLKI-7517954.jpg'
+    },
+    {
+        name: 'Ok I pull up',
+        link: 'https://im.wampi.ru/2023/04/24/maxresdefault-3.jpg'
+    }
+];
 */
 

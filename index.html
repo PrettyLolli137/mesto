@@ -15,22 +15,18 @@
             </header>
             <main>
                 <section class="profile">
-                        <img src="./images/photo_2023-04-29_04-02-16.jpg" alt="Аватар" class="profile__image">
+                    <img src="./images/onizuka.jpg" alt="Аватар" class="profile__image">
                     <div class="profile__info">
                         <div class="profile__informs">
                             <h1 class="profile__title">Onizuka San</h1>
-                            <button class="profile__edit-button" type="button">
-                            </button>
+                            <button class="profile__edit-button" type="button"></button>
                         </div>
-                    <p class="profile__subtitle">Мужчина Честной Судьбы</p>
-                        </div>
-                    <button class="profile__add-button" type="button">
-                    </button>
+                        <p class="profile__subtitle">Мужчина Честной Судьбы</p>
+                    </div>
+                    <button class="profile__add-button" type="button"></button>
                 </section>
 
-                <section class="groups">
-                    
-                </section>
+                <section class="groups"></section>
             </main>
             <footer class="footer">
                 <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
@@ -39,46 +35,43 @@
         <div class="popup">
             <div class="popup__container">
                 <h2 class="popup__title">Редактировать профиль</h2>
-                    <form class="popup__form" name="popup__form">
-                        <input type="text" placeholder="Введите Имя" class="popup__input popup__input_type_name" name="popup__input popup__input_type_name">
-                        <input type="text" placeholder="Введите профессию" class="popup__input popup__input_type_job" name="popup__input popup__input_type_job">
-                        <button class="popup__form-button-save" type="submit">
-                            Сохранить
-                        </button>
-                        <button class="popup__form-close-btn" type="button"></button>
-                    </form>
+                <form class="popup__form" name="popup__form">
+                    <input type="text" placeholder="Введите Имя" class="popup__input popup__input_type_name" name="popup__input popup__input_type_name">
+                    <input type="text" placeholder="Введите профессию" class="popup__input popup__input_type_job" name="popup__input popup__input_type_job">
+                    <button class="popup__form-button-save" type="submit">
+                        Сохранить
+                    </button>
+                    <button class="popup__form-close-btn" type="button"></button>
+                </form>
             </div>
         </div>
         <div class="popup popup_type_add">
             <div class="popup__container">
                 <h2 class="popup__title">Новое место</h2>
-                    <form class="popup__form-add" name="popup__form">
-                        <input type="text" placeholder="Название" class="popup__text" name="nameAdd">
-                        <input type="link" placeholder="Ссылка на картинку" class="popup__link" name="linkAdd">
-                        <button class="popup__form-button-save" type="submit">
-                            Создать
-                        </button>
-                        <button class="popup__form-close-btn" type="button"></button>
-                    </form>
+                <form class="popup__form-add" name="popup__form">
+                    <input type="text" placeholder="Название" class="popup__text" name="nameAdd">
+                    <input type="text" placeholder="Ссылка на картинку" class="popup__link" name="linkAdd">
+                    <button class="popup__form-button-save" type="submit">
+                        Создать
+                    </button>
+                    <button class="popup__form-close-btn" type="button"></button>
+                </form>
             </div>
         </div>
-        
+
         <div class="popup popup_type_img">
             <div class="popup__images-container">
+                <button class="popup__images-closebtn" type="button"></button>
                 <figure class="popup__figure">
-                    <img class="popup__picture" src="">
+                    <img class="popup__picture" src="#" alt="#">
                     <figcaption class="popup__picture-description"></figcaption>
-                    <button class="popup__images-closebtn" type="button"></button>
                 </figure>
             </div>
         </div>
-        
-
-
         <template id="card-template">
             <ul class="groups__group">
                 <li class="groups__element">
-                    <img  class="groups__image groups__image_popup_opened" src="">
+                    <img class="groups__image groups__image_popup_opened" src="#" alt="#">
                     <button class="groups__deletebtn"></button>
                     <div class="groups__mask">
                         <h2 class="groups__text"></h2>
