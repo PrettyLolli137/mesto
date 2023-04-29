@@ -15,20 +15,21 @@
             </header>
             <main>
                 <section class="profile">
-                        <img src="./images/profile__image.jpg" alt="Аватар" class="profile__image">
+                        <img src="./images/photo_2023-04-29_04-02-16.jpg" alt="Аватар" class="profile__image">
                     <div class="profile__info">
                         <div class="profile__informs">
-                            <h1 class="profile__title">Жак-Ив Кусто</h1>
-                            <button class="profile__edit-button profile__edit-button_popup_opened" type="button">
+                            <h1 class="profile__title">Onizuka San</h1>
+                            <button class="profile__edit-button" type="button">
                             </button>
                         </div>
-                    <p class="profile__subtitle">Исследователь океана</p>
+                    <p class="profile__subtitle">Мужчина Честной Судьбы</p>
                         </div>
-                    <button class="profile__add-button profile__add-button_popup_added" type="button">
+                    <button class="profile__add-button" type="button">
                     </button>
                 </section>
 
                 <section class="groups">
+                    
                 </section>
             </main>
             <footer class="footer">
@@ -48,12 +49,12 @@
                     </form>
             </div>
         </div>
-        <div class="popup__add">
+        <div class="popup popup_type_add">
             <div class="popup__container">
                 <h2 class="popup__title">Новое место</h2>
-                    <form class="popup__form" name="popup__form">
+                    <form class="popup__form-add" name="popup__form">
                         <input type="text" placeholder="Название" class="popup__text" name="nameAdd">
-                        <input type="link" placeholder="Ссылка на картинку" class="popup__text" name="linkAdd">
+                        <input type="link" placeholder="Ссылка на картинку" class="popup__link" name="linkAdd">
                         <button class="popup__form-button-save" type="submit">
                             Создать
                         </button>
@@ -61,23 +62,23 @@
                     </form>
             </div>
         </div>
-        <!--
-        <div class="popup__images">
+        
+        <div class="popup popup_type_img">
             <div class="popup__images-container">
-                <button class="popup__images-closebtn" type="button"></button>
                 <figure class="popup__figure">
-                    <img class="popup__picture" src="https://im.wampi.ru/2023/04/24/Capybara-in-the-pool.jpg" alt="">
+                    <img class="popup__picture" src="">
                     <figcaption class="popup__picture-description"></figcaption>
+                    <button class="popup__images-closebtn" type="button"></button>
                 </figure>
             </div>
         </div>
-        -->
+        
 
 
         <template id="card-template">
             <ul class="groups__group">
                 <li class="groups__element">
-                    <img  class="groups__image">
+                    <img  class="groups__image groups__image_popup_opened" src="">
                     <button class="groups__deletebtn"></button>
                     <div class="groups__mask">
                         <h2 class="groups__text"></h2>
