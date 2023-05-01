@@ -10,6 +10,7 @@ const popupName = document.querySelector(".popup__input_type_name");
 const popupJob = document.querySelector(".popup__input_type_job");
 const formElement = document.querySelector(".popup__container");
 const formSave = document.querySelector(".popup__form");
+const popup = document.querySelector('.popup');
 
 function openPopup(popup) {
     popup.classList.add('popup_opened')
