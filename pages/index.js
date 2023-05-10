@@ -3,8 +3,7 @@
 const openPopupBtn = document.querySelector(".profile__edit-button");
 const editPopup = document.querySelector(".popup_type_edit");
 const popupCloseBtn = document.querySelector(".popup__close");
-const editPopupSaveBtn = document.querySelector(".popup__button-save_type_edit");
-const addPopupSaveBtn = document.querySelector(".popup__button-save_type_add");
+const submitBtn = document.querySelector(".popup__button-save");
 const profileName = document.querySelector(".profile__title");
 const profileJob = document.querySelector(".profile__subtitle");
 const popupName = document.querySelector(".popup__input_type_name");
@@ -75,6 +74,7 @@ function handleProfileFormSubmit(evt) {
 
 const openAddPopup = () => {
     openPopup(popupAdd)
+
 }
 
 const closeAddPopup = () => {

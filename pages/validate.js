@@ -59,14 +59,14 @@ const setEventListeners = (formElement) => {
   });
 };
 
+const formList = document.querySelectorAll(FormClassList.formSelector);
+formList.forEach((formElement) => {
+  setEventListeners(formElement);
+});
 
-  const formList = document.querySelectorAll(FormClassList.formSelector);
+/* const formList = document.querySelectorAll(FormClassList.formSelector);
   formList.forEach((formElement) => {
     setEventListeners(formElement);
-  });
-
-
-/*
 const inputList = Array.from(formElement.querySelectorAll(FormClassList.inputSelector));
 
 
