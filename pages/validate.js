@@ -69,7 +69,7 @@ const setEventListeners = (formElement) => {
 /*
 const inputList = Array.from(formElement.querySelectorAll(FormClassList.inputSelector));
 
-let isFormValid = true;
+
 
 const isValid = inputElement => inputElement.validity.valid;
 
