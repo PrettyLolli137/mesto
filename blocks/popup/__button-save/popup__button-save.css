@@ -1,4 +1,4 @@
-.popup__form-button-save {
+.popup__button-save {
     all: unset;
     margin: 0;
     padding: 0;
@@ -17,12 +17,22 @@
     text-align: center;
 }
 
-.popup__form-button-save:hover {
+.popup__button-save:hover {
     opacity: 0.8;
 }
 
+.popup__button-save-disabled {
+    background-color: #fff;
+    color: #b3b3b3;
+    opacity: 1;
+    user-select: none;
+    border: 1px solid #b3b3b3;
+border-radius: 2px;
+}
+
+
 @media screen and (min-width: 1280px) {
-    .popup__form-button-save {
+    .popup__button-save {
         margin-top: 18px;
         width: 358px;
         height: 50px;
@@ -31,3 +41,9 @@
         
     }
 }
+
+
+
+
+
+

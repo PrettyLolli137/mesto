@@ -2,5 +2,15 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 30px;
+    gap: 10px;
 }
+
+
+.popup__form-invalid .popup__input {
+border-color: red;
+}
+
+.popup__form-invalid .popup__input-error { 
+    opacity: 1;
+    padding: 10px;
+  }
