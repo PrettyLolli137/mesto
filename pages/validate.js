@@ -1,14 +1,14 @@
 //Показывает ошибку красным цветом и подчеркивает красным цветом строки валидации
 
-const activateError = (formElement, inputElement, message, formClassList) => {
+const activateError = (formElement,inputElement, message, formClassList) => {
   const errorElement = formElement.querySelector(`#error-${inputElement.id}`);
-  inputElement.classList.add(formClassList.inputErrorClass);
+    inputElement.classList.add(formClassList.inputErrorClass);
   errorElement.textContent = message;
   errorElement.classList.add(formClassList.errorClass);
 };
 
 //Убирает ошибки в валидации
-const resetError = (formElement, inputElement, formClassList) => {
+const resetError = (formElement,inputElement, formClassList) => {
   const errorElement = formElement.querySelector(`#error-${inputElement.id}`);
   inputElement.classList.remove(formClassList.inputErrorClass);
   errorElement.classList.remove(formClassList.errorClass);
