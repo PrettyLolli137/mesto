@@ -7,11 +7,3 @@
 }
 
 
-.popup__form-invalid .popup__input {
-border-color: red;
-}
-
-.popup__form-invalid .popup__input-error { 
-    opacity: 1;
-    padding: 10px;
-  }

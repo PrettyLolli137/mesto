@@ -27,7 +27,6 @@
                 </section>
 
                 <section class="groups"></section>
-               
             </main>
             <footer class="footer">
                 <p class="footer__copyright">&copy; 2023 Mesto Russia</p>
@@ -38,12 +37,12 @@
                 <h2 class="popup__title">Редактировать профиль</h2>
                 <form id="formEdit" class="popup__form popup__form_type_edit" name="edit-form" novalidate>
                     <label class="popup__input-elements">
-                    <input id="username" type="text" placeholder="Введите Имя" class="popup__input popup__input_type_name" name="username" required minlength="2" maxlength="40">
-                    <span id="error-username" class="popup__input-error"></span>
+                    <input id="username" type="text" placeholder="Введите Имя" class="popup__input popup__input_type_name popup__input_valid_error" name="username" required minlength="2" maxlength="40">
+                    <span id="error-username" class="username-error popup__error popup__error_visible"></span>
                 </label>
                 <label class="popup__input-elements">
-                    <input id="job" type="text" placeholder="Введите профессию" class="popup__input popup__input_type_job" name="job" required  minlength="2" maxlength="200">
-                    <span id="error-job" class="popup__input-error"></span>
+                    <input id="job" type="text" placeholder="Введите профессию" class="popup__input popup__input_type_job popup__input_valid_error" name="job" required  minlength="2" maxlength="200">
+                    <span id="error-job" class="job-error popup__error popup__error_visible"></span>
                 </label>
                     <button class="popup__button-save popup__button-save_type_edit popup__button-disabled" type="submit" disabled>
                         Сохранить
@@ -56,10 +55,10 @@
             <div class="popup__container">
                 <h2 class="popup__title">Новое место</h2>
                 <form id="formAdd" class="popup__form popup__form_type_add" name="add-form" novalidate >
-                    <input id="usernameAdd" type="text" placeholder="Название" class="popup__input popup__input_type_text" name="nameAdd" required minlength="2" maxlength="30">
-                    <span id="error-usernameAdd" class="popup__input-error"></span>
-                    <input id="url" type="url" placeholder="Ссылка на картинку" class="popup__input popup__input_type_link" name="linkAdd" required>
-                    <span id="error-url" class="popup__input-error"></span>
+                    <input id="usernameAdd" type="text" placeholder="Название" class="popup__input popup__input_type_text popup__input_valid_error" name="nameAdd" required minlength="2" maxlength="30">
+                    <span id="error-usernameAdd" class="usernameAdd-error popup__error popup__error_visible"></span>
+                    <input id="url" type="url" placeholder="Ссылка на картинку" class="popup__input popup__input_type_link popup__input_valid_error" name="linkAdd" required>
+                    <span id="error-url" class="url-error popup__error popup__error_visible"></span>
                     <button class="popup__button-save popup__button-save_type_add popup__button-disabled" type="submit" disabled>
                         Создать
                     </button>

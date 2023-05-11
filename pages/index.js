@@ -69,7 +69,7 @@ function handleProfileFormSubmit(evt) {
     evt.preventDefault();
     profileName.textContent = popupName.value;
     profileJob.textContent = popupJob.value;
-    closePopup(editPopup);
+    closePopup(popupEdit);
     evt.target.reset(evt);
 }
 

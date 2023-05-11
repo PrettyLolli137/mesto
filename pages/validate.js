@@ -1,7 +1,7 @@
 //Показывает ошибку красным цветом и подчеркивает красным цветом строки валидации
 
 const activateError = (formElement,inputElement, message, formClassList) => {
-  const errorElement = formElement.querySelector(`#error-${inputElement.id}`);
+  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.add(formClassList.inputErrorClass);
   errorElement.textContent = message;
   errorElement.classList.add(formClassList.errorClass);
@@ -9,7 +9,7 @@ const activateError = (formElement,inputElement, message, formClassList) => {
 
 //Убирает ошибки в валидации
 const resetError = (formElement,inputElement, formClassList) => {
-  const errorElement = formElement.querySelector(`#error-${inputElement.id}`);
+  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);
   inputElement.classList.remove(formClassList.inputErrorClass);
   errorElement.classList.remove(formClassList.errorClass);
   errorElement.textContent = '';
@@ -79,8 +79,8 @@ enableValidation({
   inputSelector: '.popup__input',
   submitButtonSelector: '.popup__button-save',
   inactiveButtonClass: 'popup__button-save-disabled',
-  inputErrorClass: 'popup__form-invalid',
-  errorClass: 'popup__input-error'
+  inputErrorClass: 'popup__input_valid_error',
+  errorClass: 'popup__error_visible'
 });
 
 
