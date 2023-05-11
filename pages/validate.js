@@ -2,7 +2,7 @@
 
 const activateError = (formElement,inputElement, message, formClassList) => {
   const errorElement = formElement.querySelector(`#error-${inputElement.id}`);
-    inputElement.classList.add(formClassList.inputErrorClass);
+  inputElement.classList.add(formClassList.inputErrorClass);
   errorElement.textContent = message;
   errorElement.classList.add(formClassList.errorClass);
 };
@@ -99,6 +99,7 @@ const FormClassList = {
   inputErrorClass: 'popup__form-invalid',
   errorClass: 'popup__input-error'
 };
+  const errorElement = formElement.querySelector(`#error-${inputElement.id}`);
 
 const isValid = inputElement => inputElement.validity.valid;
 
