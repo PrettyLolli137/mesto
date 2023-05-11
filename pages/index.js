@@ -1,62 +1,68 @@
-/* Поп-ап редактирования профиля */
+import { activateButton }  from "./validate.js";
+import { deactivateButton }  from "./validate.js";
 
-const openPopupBtn = document.querySelector(".profile__edit-button");
-const editPopup = document.querySelector(".popup_type_edit");
-const popupCloseBtn = document.querySelector(".popup__close");
-const submitBtn = document.querySelector(".popup__button-save");
+
+const openEditBtn = document.querySelector(".profile__edit-button");
+const popupEdit = document.querySelector(".popup_type_edit");
 const profileName = document.querySelector(".profile__title");
 const profileJob = document.querySelector(".profile__subtitle");
 const popupName = document.querySelector(".popup__input_type_name");
 const popupJob = document.querySelector(".popup__input_type_job");
-const formElement = document.querySelector(".popup__container");
-const formSave = document.querySelector(".popup__form");
-const popup = document.querySelector('.popup');
+const formEditPopup = document.querySelector(".popup__form_type_edit");
+const formAddPopup = document.querySelector(".popup__form_type_add");
 const popupImages = document.querySelector(".popup__picture");
 const popupDescription = document.querySelector(".popup__picture-description");
 const cardTemplate = document.getElementById("card-template");
 const groupsContainer = document.querySelector(".groups");
 const popupAddBtn = document.querySelector(".profile__add-button");
 const popupAdd = document.querySelector(".popup_type_add");
-const popupAddForm = document.querySelector('.popup__form_type_add');
 const popupNameAdd = document.querySelector(".popup__input_type_text");
 const popupLinkAdd = document.querySelector(".popup__input_type_link");
 const popupImg = document.querySelector(".popup_type_img");
-const popupImgForm = document.querySelector(".popup__images-container");
-const popupAddClose = document.querySelector(".popup__close");
-const popupImgClose = document.querySelector(".popup__close");
 
 
 
-function openPopup(popup) {
-    popup.classList.add('popup_opened')
-}
+const popupList = Array.from(document.querySelectorAll('.popup'));
 
-function closePopup(popup) {
-    popup.classList.remove("popup_opened")
-}
 
-/* popup Edit  */
+const handlePopupClose = (evt) => {
+    const isOverlay = evt.target.classList.contains('popup');
+    const isCloseBtn = evt.target.classList.contains('popup__close');
 
-const openPopupEdit = () => {
-    openPopup(editPopup) 
+    if (isOverlay || isCloseBtn) {
+        popupList.forEach(closePopup);
+    }
 };
 
-
-const closePopupEdit = () => {
-    closePopup(editPopup);
-}
-
-function editName () {
-    popupName.value = profileName.textContent; 
-    popupJob.value = profileJob.textContent; 
-}
-
-function closePopupByClick(evt) {
-    const isOverlay = evt.target.classList.contains("popup_type_edit");
-    const isCloseBtn = evt.target.classList.contains("popup__close");
-    if (isOverlay || isCloseBtn) {
-        closePopup(editPopup);
+const closePressTheEsc = (evt) => {
+    if (evt.key === 'Escape') {
+        popupList.forEach(closePopup);
     }
+}
+
+const openPopup = (popupElement) => {
+    popupElement.classList.add('popup_opened');
+    document.addEventListener('click', handlePopupClose);
+    document.addEventListener('keydown', closePressTheEsc);
+}
+
+const closePopup = (popupElement) => {
+    popupElement.classList.remove('popup_opened');
+    document.removeEventListener('click', handlePopupClose);
+    document.removeEventListener('keydown', closePressTheEsc);
+}
+
+const openEditForm = () => {
+    popupName.value = profileName.textContent;
+    popupJob.value = profileJob.textContent;
+    activateButton(popupEdit.querySelector('.popup__button-save'), { inactiveButtonClass: 'popup__button-save-disabled' });
+    openPopup(popupEdit);
+}
+
+const openAddForm = () => {
+    formAddPopup.reset();
+    deactivateButton(popupAdd.querySelector('.popup__button-save'), { inactiveButtonClass: 'popup__button-save-disabled' });
+    openPopup(popupAdd);
 }
 
 function handleProfileFormSubmit(evt) {
@@ -65,28 +71,6 @@ function handleProfileFormSubmit(evt) {
     profileJob.textContent = popupJob.value;
     closePopup(editPopup);
     evt.target.reset(evt);
-
-}
-
-
-
-/* Поп ап для добавления картинок */
-
-const openAddPopup = () => {
-    openPopup(popupAdd)
-
-}
-
-const closeAddPopup = () => {
-    closePopup(popupAdd)
-}
-
-function closePopupAddByClick(evt) {
-    const isOverlay = evt.target.classList.contains("popup_type_add");
-    const isCloseBtn = evt.target.classList.contains("popup__close");
-    if (isOverlay || isCloseBtn) {
-        closePopup(popupAdd);
-    }
 }
 
 const handleAddFormSubmit = (event) => {
@@ -104,47 +88,6 @@ const handleAddFormSubmit = (event) => {
     closePopup(popupAdd);
     event.target.reset(event);
 };
-
-
-
-
-/* Поп ап для фоток */
-
-
-const closePopupImg = () => {
-    closePopup(popupImg)
-}
-
-function closePopupImgByClick(evt) {
-    const isOverlay = evt.target.classList.contains("popup_type_img");
-    const isCloseBtn = evt.target.classList.contains("popup__close");
-    if (isOverlay || isCloseBtn) {
-        closePopup(popupImg);
-    }
-}
-const handleImgClick = (cardsData) => {
-    cardsData.preventDefault();
-    cardsData.name = popupDescription.textContent;
-    cardsData.link = popupImages.src;
-};
-
-
-/* Закрытие на Esc  */
-function closeOpenedPopup() {
-    const openedPopup = document.querySelector('.popup_opened');
-    if (openedPopup) {
-        closePopup(openedPopup);
-    }
-}
-
-document.addEventListener('keydown', function (evt) {
-    if (evt.key === 'Escape') {
-        closeOpenedPopup();
-    }
-});
-
-
-/* 6 карточек, лайк и мусорка */
 
 const initialCards = [
     {
@@ -215,20 +158,11 @@ initialCards.forEach((cards) => {
     renderAddElement(element);
 });
 
-openPopupBtn.addEventListener("click", editName);
-editPopup.addEventListener("click", closePopupByClick);
-formElement.addEventListener("submit", handleProfileFormSubmit);
-formSave.addEventListener("click", closePopupByClick);
-openPopupBtn.addEventListener("click", () => openPopup(editPopup));
-popupAdd.addEventListener("click", closePopupAddByClick);
-popupAddForm.addEventListener("submit", handleAddFormSubmit);
-formSave.addEventListener("click", closePopupAddByClick);
-popupAddBtn.addEventListener("click", () => openPopup(popupAdd));
-popupImg.addEventListener("click", closePopupImgByClick);
-popupImgForm.addEventListener("click", handleImgClick);
-popupCloseBtn.addEventListener("click", () => closePopup(editPopup));
-popupAddClose.addEventListener("click", () => closePopup(popupAdd));
-popupImgClose.addEventListener('click', () => closePopup(popupImg))
+formEditPopup.addEventListener("submit", handleProfileFormSubmit);
+openEditBtn.addEventListener("click",openEditForm);
+formAddPopup.addEventListener("submit", handleAddFormSubmit);
+popupAddBtn.addEventListener("click",openAddForm);
+
 
 
 
@@ -247,10 +181,15 @@ popupImgClose.addEventListener('click', () => closePopup(popupImg))
     }
     
     /*Пытался сделать сделать открытие и у картинки таким же способом, но не получается сделать */
+/*
 
-
-
-
+    const handleImgClick = (cardsData) => {
+        cardsData.preventDefault();
+        cardsData.name = popupDescription.textContent;
+        cardsData.link = popupImages.src;
+    };
+popupImgForm.addEventListener("click", handleImgClick);
+const popupCloseBtn = document.querySelector(".popup__close");
 
 
 
@@ -280,33 +219,89 @@ const renderAddElement = (cardsElement) => {
 
 
 
-    
-const initialCards = [
-    {
-        name: 'Капибара отдыхает',
-        link: 'https://im.wampi.ru/2023/04/24/Capybara-in-the-pool.jpg'
-        
-    },
-    {
-        name: 'Капибара работает',
-        link: 'https://im.wampi.ru/2023/04/24/760688.jpg'
-    },
-    {
-        name: 'Капибара на интервью',
-        link: 'https://im.wampi.ru/2023/04/24/i_11zon.jpg'
-    },
-    {
-        name: 'Капибара и друзья',
-        link: 'https://ie.wampi.ru/2023/04/24/5M0V7TvZ3zON7x_11zon.jpg'
-    },
-    {
-        name: 'Капибары Уллиема Дефо',
-        link: 'https://ie.wampi.ru/2023/04/24/KAPIBARA-ZIVOTNYE-MEMY-OTSYLKI-7517954.jpg'
-    },
-    {
-        name: 'Ok I pull up',
-        link: 'https://im.wampi.ru/2023/04/24/maxresdefault-3.jpg'
-    }
-];
+    popupCloseBtn.addEventListener("click", () => closePopup(editPopup));
+const popupCloseBtn = document.querySelector(".popup__close");
+
+
+/*
+
+
+
+
+
+
+
+
 */
 
+
+
+
+
+
+/* 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*/

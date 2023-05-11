@@ -26,6 +26,7 @@
     color: #b3b3b3;
     opacity: 1;
     user-select: none;
+    cursor: none;
     border: 1px solid #b3b3b3;
 border-radius: 2px;
 }
