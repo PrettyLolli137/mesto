@@ -64,15 +64,13 @@ const setEventListeners = (formElement, formClassList) => {
 };
 
 
-const enableValidation = (formClassList) => {
-  const formList = Array.from(document.querySelectorAll(formClassList.formSelector));
-  formList.forEach((formElement) => {
-    formElement.addEventListener('submit', function (evt) {
-      evt.preventDefault();
-    });
-    setEventListeners(formElement, formClassList);
-  });
-};
+const enableValidation = (formClassList) => { 
+    const formList = Array.from(document.querySelectorAll(formClassList.formSelector)); 
+    formList.forEach((formElement) => {  
+      setEventListeners(formElement, formClassList); 
+    }); 
+  }; 
+
 
 enableValidation({
   formSelector: '.popup__form',

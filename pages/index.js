@@ -25,30 +25,33 @@ const popupImg = document.querySelector(".popup_type_img");
 const popupList = Array.from(document.querySelectorAll('.popup'));
 
 
-const handlePopupClose = (evt) => {
-    const isOverlay = evt.target.classList.contains('popup');
-    const isCloseBtn = evt.target.classList.contains('popup__close');
 
-    if (isOverlay || isCloseBtn) {
-        popupList.forEach(closePopup);
-    }
-};
+const handlePopupClose = (evt) => { 
+    const isOverlay = evt.target.classList.contains('popup'); 
+    const isCloseBtn = evt.target.classList.contains('popup__close'); 
+    if (isOverlay || isCloseBtn) { 
+        popupList.forEach(closePopup); 
+    } 
+}; 
 
 const closePressTheEsc = (evt) => {
     if (evt.key === 'Escape') {
-        popupList.forEach(closePopup);
+        const openedPopup = document.querySelector('.popup_opened');
+    closePopup(openedPopup); 
     }
 }
 
+
+
 const openPopup = (popupElement) => {
     popupElement.classList.add('popup_opened');
-    document.addEventListener('click', handlePopupClose);
+    popupElement.addEventListener('click', handlePopupClose);
     document.addEventListener('keydown', closePressTheEsc);
 }
 
 const closePopup = (popupElement) => {
     popupElement.classList.remove('popup_opened');
-    document.removeEventListener('click', handlePopupClose);
+    popupElement.removeEventListener('click', handlePopupClose);
     document.removeEventListener('keydown', closePressTheEsc);
 }
 
@@ -70,7 +73,6 @@ function handleProfileFormSubmit(evt) {
     profileName.textContent = popupName.value;
     profileJob.textContent = popupJob.value;
     closePopup(popupEdit);
-    evt.target.reset(evt);
 }
 
 const handleAddFormSubmit = (event) => {
@@ -86,7 +88,6 @@ const handleAddFormSubmit = (event) => {
 
     renderAddElement(createCardElement(initialCards));
     closePopup(popupAdd);
-    event.target.reset(event);
 };
 
 const initialCards = [
@@ -165,9 +166,6 @@ popupAddBtn.addEventListener("click",openAddForm);
 
 
 
-
-
-
 /* Обший поп ап */
 /*
 
@@ -191,6 +189,19 @@ popupAddBtn.addEventListener("click",openAddForm);
 popupImgForm.addEventListener("click", handleImgClick);
 const popupCloseBtn = document.querySelector(".popup__close");
 
+
+
+
+
+popupEdit.addEventListener("click", (evt) =>{
+    closePopupOverlay(evt);
+});
+popupAdd.addEventListener("click", (evt) =>{
+    closePopupOverlay(evt);
+});
+popupImg.addEventListener("click", (evt) =>{
+    closePopupOverlay(evt);
+});
 
 
 
