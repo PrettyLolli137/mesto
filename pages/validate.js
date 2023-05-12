@@ -18,7 +18,7 @@ const resetError = (formElement,inputElement, formClassList) => {
 // Проверка инпутов на валидность при наборе символов 
 const checkInputValidity = (formElement, inputElement, formClassList) => {
   if (!inputElement.validity.valid) {
-    activateError(formElement, inputElement, inputElement.validationMessage, formClassList);
+    activateError(formElement, inputElement, inputElement.validationMessage,formClassList);
   } else {
     resetError(formElement, inputElement, formClassList);
   }
