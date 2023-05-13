@@ -41,14 +41,17 @@ const closePressTheEsc = (evt) => {
 
     const openPopup = (popup) => {
         popup.classList.add('popup_opened');
+        document.addEventListener('keydown', closePressTheEsc);
+
     }
     const closePopup = (popup) => {
         popup.classList.remove('popup_opened');
+        document.removeEventListener('keydown',closePressTheEsc); 
+
     }
 
 popupList.forEach((popup) => {
     popup.addEventListener("click", handlePopupClose);
-    document.addEventListener('keydown', closePressTheEsc);
 })
 
 
