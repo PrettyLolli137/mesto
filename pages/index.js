@@ -28,7 +28,7 @@ const handlePopupClose = (evt) => {
     const isOverlay = evt.target.classList.contains('popup');
     const isCloseBtn = evt.target.classList.contains('popup__close');
     if (isOverlay || isCloseBtn) {
-        popupList.forEach(closePopup);
+        closePopup(evt.target);
     }
 };
 
