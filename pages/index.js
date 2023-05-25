@@ -20,6 +20,7 @@ const popupNameAdd = document.querySelector(".popup__input_type_text");
 const popupLinkAdd = document.querySelector(".popup__input_type_link");
 const popupImg = document.querySelector(".popup_type_img");
 
+
 const popupList = document.querySelectorAll('.popup');
 
 
@@ -43,7 +44,7 @@ const closePressTheEsc = (evt) => {
         popup.classList.add('popup_opened');
         document.addEventListener('keydown', closePressTheEsc);
     }
-    
+
     const closePopup = (popup) => {
         popup.classList.remove('popup_opened');
         document.removeEventListener('keydown',closePressTheEsc); 
