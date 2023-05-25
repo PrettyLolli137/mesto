@@ -28,7 +28,7 @@ const handlePopupClose = (evt) => {
     const isOverlay = evt.target.classList.contains('popup');
     const isCloseBtn = evt.target.classList.contains('popup__close');
     if (isOverlay || isCloseBtn) {
-popupList.forEach(closePopup);
+    popupList.forEach(closePopup);
     }
 };
 
@@ -42,12 +42,11 @@ const closePressTheEsc = (evt) => {
     const openPopup = (popup) => {
         popup.classList.add('popup_opened');
         document.addEventListener('keydown', closePressTheEsc);
-
     }
+    
     const closePopup = (popup) => {
         popup.classList.remove('popup_opened');
         document.removeEventListener('keydown',closePressTheEsc); 
-
     }
 
 popupList.forEach((popup) => {
@@ -166,76 +165,24 @@ popupAddBtn.addEventListener("click", openAddForm);
 
 
 
-/* Обший поп ап */
-/*
 
-    const  openPopup = (popup) => {
-        popupName.value = profileName.textContent; 
-        popupJob.value = profileJob.textContent; 
-        popup.classList.add('popup_opened');
-    }
-    const closePopup = (popup) => {
-        popup.classList.remove('popup_opened');
-    }
-    
-    /*Пытался сделать сделать открытие и у картинки таким же способом, но не получается сделать */
-/*
 
-    const handleImgClick = (cardsData) => {
-        cardsData.preventDefault();
-        cardsData.name = popupDescription.textContent;
-        cardsData.link = popupImages.src;
-    };
-popupImgForm.addEventListener("click", handleImgClick);
-const popupCloseBtn = document.querySelector(".popup__close");
 
 
 
 
 
-popupEdit.addEventListener("click", (evt) =>{
-    closePopupOverlay(evt);
-});
-popupAdd.addEventListener("click", (evt) =>{
-    closePopupOverlay(evt);
-});
-popupImg.addEventListener("click", (evt) =>{
-    closePopupOverlay(evt);
-});
 
-const openedPopup = document.querySelector('.popup_opened');
-    closePopup(openedPopup); 
 
-/*
-const cardsImage = cardsElement.querySelector('.groups__image');
-cardsImage.forEach((groupsImg)) => {
-    groupImage.addEventListener('click', () => {
-        popupImages.src = groupsImg.link;
-        popupDescription.textContent = groupsImg.name;
-    });
-}
 
-initialCards.forEach((cards) => {
-    const element = createCardElement(cards);
-    renderAddElement(element);
-    
-});
 
 
-const renderAddElement = (cardsElement) => {
-    groupsContainer.prepend(cardsElement)
-}   
-    popupImages.src = cardsData.link;
-    popupDescription.textContent = cardsData.name;
 
 
 
 
-    popupCloseBtn.addEventListener("click", () => closePopup(editPopup));
-const popupCloseBtn = document.querySelector(".popup__close");
 
 
-/*
 
 
 
@@ -244,14 +191,12 @@ const popupCloseBtn = document.querySelector(".popup__close");
 
 
 
-*/
 
 
 
 
 
 
-/* 
 
 
 
@@ -284,36 +229,3 @@ const popupCloseBtn = document.querySelector(".popup__close");
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-*/
