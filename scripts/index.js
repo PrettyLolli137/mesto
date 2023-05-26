@@ -1,5 +1,7 @@
-import { activateButton } from "./validate.js";
-import { deactivateButton } from "./validate.js";
+import { initialCards } from "./constants.js";
+import { Card } from "./card.js";
+import { FormValidator } from "./validate.js";
+
 
 
 const openEditBtn = document.querySelector(".profile__edit-button");
@@ -12,7 +14,6 @@ const formEditPopup = document.querySelector(".popup__form_type_edit");
 const formAddPopup = document.querySelector(".popup__form_type_add");
 const popupImages = document.querySelector(".popup__picture");
 const popupDescription = document.querySelector(".popup__picture-description");
-const cardTemplate = document.getElementById("card-template");
 const groupsContainer = document.querySelector(".groups");
 const popupAddBtn = document.querySelector(".profile__add-button");
 const popupAdd = document.querySelector(".popup_type_add");
@@ -25,30 +26,49 @@ const popupList = document.querySelectorAll('.popup');
 
 
 
+const formClassList = {
+    formSelector: '.popup__form',
+    inputSelector: '.popup__input',
+    submitButtonSelector: '.popup__button-save',
+    inactiveButtonClass: 'popup__button-save-disabled',
+    inputErrorClass: 'popup__input_valid_error',
+    errorClass: 'popup__error_visible'
+};
+
+
+const formProfileValidator = new FormValidator(formEditPopup, formClassList);
+formProfileValidator.enableValidation();
+
+const formAddValidator = new FormValidator(formAddPopup, formClassList);
+formAddValidator.enableValidation();
+
+
+
+
 const handlePopupClose = (evt) => {
     const isOverlay = evt.target.classList.contains('popup');
     const isCloseBtn = evt.target.classList.contains('popup__close');
     if (isOverlay || isCloseBtn) {
-    popupList.forEach(closePopup);
+        popupList.forEach(closePopup);
     }
 };
 
 const closePressTheEsc = (evt) => {
     if (evt.key === 'Escape') {
         const openedPopup = document.querySelector('.popup_opened');
-    closePopup(openedPopup); 
+        closePopup(openedPopup);
     }
-    };
+};
 
-    const openPopup = (popup) => {
-        popup.classList.add('popup_opened');
-        document.addEventListener('keydown', closePressTheEsc);
-    }
+const openPopup = (popup) => {
+    popup.classList.add('popup_opened');
+    document.addEventListener('keydown', closePressTheEsc);
+}
 
-    const closePopup = (popup) => {
-        popup.classList.remove('popup_opened');
-        document.removeEventListener('keydown',closePressTheEsc); 
-    }
+const closePopup = (popup) => {
+    popup.classList.remove('popup_opened');
+    document.removeEventListener('keydown', closePressTheEsc);
+}
 
 popupList.forEach((popup) => {
     popup.addEventListener("click", handlePopupClose);
@@ -58,13 +78,13 @@ popupList.forEach((popup) => {
 const openEditForm = () => {
     popupName.value = profileName.textContent;
     popupJob.value = profileJob.textContent;
-    activateButton(popupEdit.querySelector('.popup__button-save'), { inactiveButtonClass: 'popup__button-save-disabled' });
+    formProfileValidator.resetError();
     openPopup(popupEdit);
 }
 
 const openAddForm = () => {
     formAddPopup.reset();
-    deactivateButton(popupAdd.querySelector('.popup__button-save'), { inactiveButtonClass: 'popup__button-save-disabled' });
+    formAddValidator.resetError();
     openPopup(popupAdd);
 }
 
@@ -81,41 +101,64 @@ const handleAddFormSubmit = (event) => {
     const name = popupNameAdd.value;
     const link = popupLinkAdd.value;
 
-    const initialCards = {
+    const newCard = {
         name,
         link,
     };
 
-    renderAddElement(createCardElement(initialCards));
+    groupsContainer.prepend(createNewCard(newCard));
     closePopup(popupAdd);
 };
 
-const initialCards = [
-    {
-        name: "Капибара отдыхает",
-        link: "https://im.wampi.ru/2023/04/24/Capybara-in-the-pool.jpg",
-    },
-    {
-        name: "Капибара работает",
-        link: "https://im.wampi.ru/2023/04/24/760688.jpg",
-    },
-    {
-        name: "Капибара на интервью",
-        link: "https://im.wampi.ru/2023/04/24/i_11zon.jpg",
-    },
-    {
-        name: "Капибара и друзья",
-        link: "https://ie.wampi.ru/2023/04/24/5M0V7TvZ3zON7x_11zon.jpg",
-    },
-    {
-        name: "Капибары Уллиема Дефо",
-        link: "https://ie.wampi.ru/2023/04/24/KAPIBARA-ZIVOTNYE-MEMY-OTSYLKI-7517954.jpg",
-    },
-    {
-        name: "Ok I pull up",
-        link: "https://im.wampi.ru/2023/04/24/maxresdefault-3.jpg",
-    },
-];
+const createNewCard = (element) => {
+    const card = new Card(element, openPopupImg);
+    const cardElement = card.createCardElement();
+    return cardElement;
+}
+
+const openPopupImg = (cardsData) => {
+    popupDescription.textContent = cardsData.name;
+    popupImages.src = cardsData.link;
+    popupImages.alt = cardsData.name;
+    openPopup(popupImg);
+}
+
+initialCards.forEach((element) => {
+    groupsContainer.prepend(createNewCard(element));
+});
+
+
+formEditPopup.addEventListener("submit", handleProfileFormSubmit);
+openEditBtn.addEventListener("click", openEditForm);
+formAddPopup.addEventListener("submit", handleAddFormSubmit);
+popupAddBtn.addEventListener("click", openAddForm);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 
 const createCardElement = (cardsData) => {
     const cardsElement = cardTemplate.content.querySelector(".groups__group").cloneNode(true);
@@ -159,37 +202,8 @@ initialCards.forEach((cards) => {
     renderAddElement(element);
 });
 
-formEditPopup.addEventListener("submit", handleProfileFormSubmit);
-openEditBtn.addEventListener("click", openEditForm);
-formAddPopup.addEventListener("submit", handleAddFormSubmit);
-popupAddBtn.addEventListener("click", openAddForm);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+*/
 
 
 
