@@ -24,9 +24,4 @@ const initialCards = [
         link: "https://im.wampi.ru/2023/04/24/maxresdefault-3.jpg",
     },
 ];
-
-
-
-
-
 export { initialCards };

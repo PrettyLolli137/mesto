@@ -55,20 +55,3 @@ export { Card };
 
 
 
-/*
-  createCardElement = () => {
-    this._cardsImage = this._cardsElement.querySelector(".groups__image");
-    this._cardsTitle = this._cardsElement.querySelector(".groups__text");
-    this._cardsDeleteBtn = this._cardsElement.querySelector(".groups__deletebtn");
-    this._cardsLikeBtn = this._cardsElement.querySelector(".groups__like");
-
-    this._cardsTitle.textContent = this._name;
-    this._cardsImage.src = this._link;
-    this._cardsImage.alt = this._name;
-    this._setEvenListener();
-
-    return this._cardsElement;
-
-}
-
-*/

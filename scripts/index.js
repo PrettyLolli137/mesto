@@ -1,6 +1,6 @@
 import { initialCards } from "./constants.js";
-import { Card } from "./card.js";
-import { FormValidator } from "./validate.js";
+import { Card } from "./Сard.js";
+import { FormValidator } from "./FormValidator.js";
 
 
 
@@ -20,8 +20,6 @@ const popupAdd = document.querySelector(".popup_type_add");
 const popupNameAdd = document.querySelector(".popup__input_type_text");
 const popupLinkAdd = document.querySelector(".popup__input_type_link");
 const popupImg = document.querySelector(".popup_type_img");
-
-
 const popupList = document.querySelectorAll('.popup');
 
 
@@ -110,6 +108,7 @@ const handleAddFormSubmit = (event) => {
     closePopup(popupAdd);
 };
 
+// Создание карточки
 const createNewCard = (element) => {
     const card = new Card(element, openPopupImg);
     const cardElement = card.createCardElement();
@@ -133,77 +132,6 @@ openEditBtn.addEventListener("click", openEditForm);
 formAddPopup.addEventListener("submit", handleAddFormSubmit);
 popupAddBtn.addEventListener("click", openAddForm);
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-const createCardElement = (cardsData) => {
-    const cardsElement = cardTemplate.content.querySelector(".groups__group").cloneNode(true);
-    const cardsImage = cardsElement.querySelector(".groups__image");
-    const cardsTitle = cardsElement.querySelector(".groups__text");
-    const cardsDeleteBtn = cardsElement.querySelector(".groups__deletebtn");
-    const cardsLikeBtn = cardsElement.querySelector(".groups__like");
-
-    cardsTitle.textContent = cardsData.name;
-    cardsImage.src = cardsData.link;
-    cardsImage.alt = cardsData.name;
-
-    const handleDelete = () => {
-        cardsElement.remove();
-    };
-
-    const handleLike = (evt) => {
-        evt.target.classList.toggle("groups__like_active");
-    };
-
-    const openPopupImg = () => {
-        popupDescription.textContent = cardsData.name;
-        popupImages.src = cardsData.link;
-        popupImages.alt = cardsData.name;
-        openPopup(popupImg);
-    }
-
-    cardsImage.addEventListener('click', openPopupImg)
-
-    cardsDeleteBtn.addEventListener("click", handleDelete);
-    cardsLikeBtn.addEventListener("click", handleLike);
-    return cardsElement;
-};
-
-const renderAddElement = (cardsElement) => {
-    groupsContainer.prepend(cardsElement);
-};
-
-initialCards.forEach((cards) => {
-    const element = createCardElement(cards);
-    renderAddElement(element);
-});
-
-
-*/
 
 
 
