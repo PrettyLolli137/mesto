@@ -22,6 +22,8 @@ const popupLinkAdd = document.querySelector(".popup__input_type_link");
 const popupImg = document.querySelector(".popup_type_img");
 const popupList = document.querySelectorAll('.popup');
 
+const templateSelector = '#card-template'; // Вызвал переменную 
+
 
 
 const formClassList = {
@@ -76,13 +78,13 @@ popupList.forEach((popup) => {
 const openEditForm = () => {
     popupName.value = profileName.textContent;
     popupJob.value = profileJob.textContent;
-    formProfileValidator.resetError();
+    formProfileValidator.resetValidation();
     openPopup(popupEdit);
 }
 
 const openAddForm = () => {
     formAddPopup.reset();
-    formAddValidator.resetError();
+    formAddValidator.resetValidation();
     openPopup(popupAdd);
 }
 
@@ -110,7 +112,7 @@ const handleAddFormSubmit = (event) => {
 
 // Создание карточки
 const createNewCard = (element) => {
-    const card = new Card(element, openPopupImg);
+    const card = new Card(element, openPopupImg,templateSelector); // добавил templateSelector
     const cardElement = card.createCardElement();
     return cardElement;
 }

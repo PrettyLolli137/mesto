@@ -1,13 +1,14 @@
 class Card {
-    constructor(cardsData, openPopupImg ) {
+    constructor(cardsData, openPopupImg, templateSelector ) {
         this._cardsData = cardsData;
         this._link = cardsData.link;
         this._name = cardsData.name;
         this._openPopupImg = openPopupImg;
+        this._templateSelector = templateSelector;
 
     this._cardsElement = 
             document
-            .querySelector('#card-template')
+            .querySelector(this._templateSelector)
             .content
             .querySelector('.groups__group')
             .cloneNode(true);
