@@ -1,14 +1,14 @@
-class Card {
-    constructor(cardsData, openPopupImg, templateSelector ) {
+export default class Card {
+    constructor(cardsData, handleCardClick ) {
         this._cardsData = cardsData;
         this._link = cardsData.link;
         this._name = cardsData.name;
-        this._openPopupImg = openPopupImg;
-        this._templateSelector = templateSelector;
+        this._handleCardClick = handleCardClick;
+
 
     this._cardsElement = 
             document
-            .querySelector(this._templateSelector)
+            .getElementById('card-template')
             .content
             .querySelector('.groups__group')
             .cloneNode(true);
@@ -23,10 +23,10 @@ class Card {
     };
 
     _openImage = () => {
-        this._openPopupImg(this._cardsData);
+        this._handleCardClick(this._cardsData);
     }
 
-    _setEvenListener = () => {
+    _setEventListener = () => {
         this._cardsDeleteBtn.addEventListener('click', this._handleDelete);
         this._cardsLikeBtn.addEventListener('click', this._handleLike)
         this._cardsImage.addEventListener('click', this._openImage)
@@ -43,16 +43,7 @@ createCardElement = () => {
     this._cardsTitle.textContent = this._name;
     this._cardsImage.src = this._link;
     this._cardsImage.alt = this._name;
-    this._setEvenListener();
-
+    this._setEventListener();
     return this._cardsElement;
-
 }
-}
-
-
-export { Card };
-
-
-
-
+ }

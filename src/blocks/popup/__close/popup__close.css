@@ -7,7 +7,7 @@
     width: 20px;
     height: 20px;
     transition: opacity ease-in-out 0.3s;
-    background-image: url("../../../images/Close\ Icon.svg");
+    background-image: url("../../../images/CloseIcon.svg");
     cursor: pointer;
 }
 
@@ -25,6 +25,6 @@
         right: -46px;
         width: 32px;
         height: 32px;
-        background-image: url("../../../images/Close\ Icon\ \(1280px\).svg");
+        background-image: url("../../../images/CloseIcon1280px.svg");
     }
 }
