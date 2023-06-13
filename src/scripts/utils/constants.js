@@ -1,27 +1,27 @@
 const initialCards = [
     {
         name: "Капибара отдыхает",
-        link: "https://im.wampi.ru/2023/04/24/Capybara-in-the-pool.jpg",
+        link: "https://pbs.twimg.com/media/DuSVYaGVsAEOdMT?format=jpg&name=large",
     },
     {
-        name: "Капибара работает",
-        link: "https://im.wampi.ru/2023/04/24/760688.jpg",
+        name: "Капибара зевает",
+        link: "https://phonoteka.org/uploads/posts/2023-03/1679375631_phonoteka-org-p-zlaya-kapibara-oboi-vkontakte-47.jpg",
     },
     {
         name: "Капибара на интервью",
-        link: "https://im.wampi.ru/2023/04/24/i_11zon.jpg",
+        link: "https://www.meme-arsenal.com/memes/316cc4c9ff41d2aa5e8d044c5454d100.jpg",
     },
     {
         name: "Капибара и друзья",
-        link: "https://ie.wampi.ru/2023/04/24/5M0V7TvZ3zON7x_11zon.jpg",
+        link: "https://pbs.twimg.com/media/E3251qUWYAECU0D.jpg",
     },
     {
-        name: "Капибары Уллиема Дефо",
-        link: "https://ie.wampi.ru/2023/04/24/KAPIBARA-ZIVOTNYE-MEMY-OTSYLKI-7517954.jpg",
+        name: "Капибара бешбармак",
+        link: "https://pbs.twimg.com/media/Dc6xdk7XkAA9qvv?format=jpg&name=900x900",
     },
     {
         name: "Ok I pull up",
-        link: "https://im.wampi.ru/2023/04/24/maxresdefault-3.jpg",
+        link: "https://i.ytimg.com/vi/V36bCahm1nU/maxresdefault.jpg",
     },
 ];
 
