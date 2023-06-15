@@ -1,7 +1,6 @@
 export default class FormValidator {
     constructor(formElement, formClassList) {
         this._formElement = formElement;
-        this._formSelector = formClassList.formSelector;
         this._inputSelector = formClassList.inputSelector;
         this._submitButtonSelector = formClassList.submitButtonSelector;
         this._inactiveButtonClass = formClassList.inactiveButtonClass;
@@ -83,9 +82,3 @@ export default class FormValidator {
         this._deactivateButton();
     }
 }
-
-
-
-
-
-

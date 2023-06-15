@@ -30,11 +30,10 @@ const openEditBtn = document.querySelector(".profile__edit-button");
 const popupAddBtn = document.querySelector(".profile__add-button");
 const formEditPopup = document.querySelector(".popup__form_type_edit");
 const formAddPopup = document.querySelector(".popup__form_type_add");
-
+const templateSelector = '#card-template';
 
 
 const formClassList = {
-    formSelector: '.popup__form',
     inputSelector: '.popup__input',
     submitButtonSelector: '.popup__button-save',
     inactiveButtonClass: 'popup__button-save-disabled',
@@ -45,7 +44,7 @@ const formClassList = {
 const formProfileInfo = {
     profileNameSelector: '.profile__title',
     profileJobSelector: '.profile__subtitle'
-  };
+};
 
 
 
@@ -57,15 +56,5 @@ export {
     formAddPopup,
     formEditPopup,
     formProfileInfo,
-    
+    templateSelector
 };
-
-
-
-
-
-/*
-
-const groupsContainer = document.querySelector(".groups");
-
-*/
