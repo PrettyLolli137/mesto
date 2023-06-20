@@ -39,13 +39,11 @@ section.renderItems();
 // Попап и форма для редактирования
 const popupEdit = new PopupWithForm(".popup_type_edit", inputValues => {
     userInfo.setUserInfo(inputValues);
-    popupEdit.close();
 });
 
 //Попап для формы с добавлением картинки
 const popupAdd = new PopupWithForm(".popup_type_add", inputValues => {
     section.addNewItem(section.renderer(inputValues));
-    popupAdd.close();
 });
 
 //Validation 
