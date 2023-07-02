@@ -15,13 +15,16 @@
         </header>
         <main>
             <section class="profile">
-                <img src="<%=require ('./images/onizuka.jpg')%>" alt="Аватар" class="profile__image">
+                <button class="profile__avatar-btn">
+                    <img src="<%=require ('./images/onizuka.jpg')%>" alt="Аватар" class="profile__image">
+                </button>
+                <!--   <img src="<%=require ('./images/onizuka.jpg')%>" alt="Аватар" class="profile__image"> -->
                 <div class="profile__info">
                     <div class="profile__informs">
-                        <h1 class="profile__title">Onizuka San</h1>
+                        <h1 class="profile__title"></h1>
                         <button class="profile__edit-button" type="button"></button>
                     </div>
-                    <p class="profile__subtitle">Мужчина Честной Судьбы</p>
+                    <p class="profile__subtitle"></p>
                 </div>
                 <button class="profile__add-button" type="button"></button>
             </section>
@@ -32,7 +35,7 @@
         </footer>
     </div>
     <div class="popup popup_type_edit">
-        <div class="popup__container">
+        <div class="popup__container popup__container_type_form">
             <h2 class="popup__title">Редактировать профиль</h2>
             <form id="formEdit" class="popup__form popup__form_type_edit" name="edit-form" novalidate>
                 <label class="popup__input-elements">
@@ -47,7 +50,7 @@
                     <span id="error-job" class="job-error popup__error popup__error_visible"></span>
                 </label>
                 <button class="popup__button-save popup__button-save_type_edit popup__button-disabled" type="submit"
-                    disabled>
+                    disabled value="Сохранить">
                     Сохранить
                 </button>
                 <button class="popup__close" type="button"></button>
@@ -55,7 +58,7 @@
         </div>
     </div>
     <div class="popup popup_type_add">
-        <div class="popup__container">
+        <div class="popup__container popup__container_type_form">
             <h2 class="popup__title">Новое место</h2>
             <form id="formAdd" class="popup__form popup__form_type_add" name="add-form" novalidate>
                 <input id="usernameAdd" type="text" placeholder="Название" class="popup__input popup__input_type_text "
@@ -65,13 +68,43 @@
                     name="link" required>
                 <span id="error-url" class="url-error popup__error popup__error_visible"></span>
                 <button class="popup__button-save popup__button-save_type_add popup__button-disabled" type="submit"
-                    disabled>
+                    disabled value="Создать">
                     Создать
                 </button>
                 <button class="popup__close" type="button"></button>
             </form>
         </div>
     </div>
+    <!--РЕДАКТИРОВАНИЕ АВАТАРКИ-->
+    <div class="popup popup_type_edit-avatar">
+        <div class="popup__container popup__container_type_avatar">
+            <h2 class="popup__title">Обновить аватар</h2>
+            <form id="formEditAvatar" class="popup__form popup__form_edit-avatar" name="avatar-form" novalidate>
+                <input id="url" type="url" placeholder="Ссылка на картинку" name="url"
+                    class="popup__input popup__input_type_link" required>
+                <span id="error-url" class="url-error popup__error popup__error_visible"></span>
+                <button class="popup__button-save popup__button-save_type_edit-avatar popup__button-disabled"
+                    type="submit" disabled value="Сохранить">
+                    Сохранить
+                </button>
+                <button class="popup__close" type="button"></button>
+        </div>
+    </div>
+    <!-- УДАЛЕНИЕ КАРТОЧКИ -->
+    <div class="popup popup_type_delete">
+        <div class="popup__container popup__container_type_delete">
+            <button class="popup__close" type="button"></button>
+            <h2 class="popup__title popup__title_delete">Вы уверенны?</h2>
+            <form id="formDelete" class="popup__form popup__form_type_delete" name="delete-form" novalidate>
+                <button class="popup__button-save popup__button-save_type_delete popup__button-disabled" type="submit"
+                    disabled value="Да">
+                    Да
+                </button>
+            </form>
+        </div>
+    </div>
+
+
     <div class="popup popup_type_img popup_overlay_dark">
         <div class="popup__images-container">
             <button class="popup__close" type="button"></button>
@@ -88,7 +121,11 @@
                 <button class="groups__deletebtn"></button>
                 <div class="groups__mask">
                     <h2 class="groups__text"></h2>
-                    <button type="button" class="groups__like groups__like_active"></button>
+                    <div class="groups__like-container">
+                        <button type="button" class="groups__like groups__like_active">
+                            <p class="groups__like-counter">0</p>
+                        </button>
+                    </div>
                 </div>
             </li>
         </ul>

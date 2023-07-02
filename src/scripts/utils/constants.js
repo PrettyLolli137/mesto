@@ -1,3 +1,4 @@
+/*
 const initialCards = [
     {
         name: "Капибара отдыхает",
@@ -25,12 +26,21 @@ const initialCards = [
     },
 ];
 
+// const templateSelector = '#card-template';
+
+  //  templateSelector,
+
+
+
+*/
 
 const openEditBtn = document.querySelector(".profile__edit-button");
 const popupAddBtn = document.querySelector(".profile__add-button");
+const popupAvatarBtn = document.querySelector('.profile__avatar-btn');
 const formEditPopup = document.querySelector(".popup__form_type_edit");
 const formAddPopup = document.querySelector(".popup__form_type_add");
-const templateSelector = '#card-template';
+const formAvatar = document.querySelector('.popup__form_edit-avatar');
+
 
 
 const formClassList = {
@@ -43,18 +53,20 @@ const formClassList = {
 
 const formProfileInfo = {
     profileNameSelector: '.profile__title',
-    profileJobSelector: '.profile__subtitle'
+    profileJobSelector: '.profile__subtitle',
+    profileImgSelector: '.profile__image'
 };
 
 
 
 export {
-    initialCards,
+// initialCards,
     openEditBtn,
     popupAddBtn,
     formClassList,
     formAddPopup,
     formEditPopup,
     formProfileInfo,
-    templateSelector
+    popupAvatarBtn,
+    formAvatar
 };
