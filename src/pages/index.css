@@ -59,6 +59,7 @@
 @import url(../blocks/popup/_overlay/popup_overlay_dark.css);
 @import url(../blocks/popup/__button-save/_delete/popup__button-save_type_delete.css);
 @import url(../blocks/popup/__title/_delete/popup__title_delete.css);
+@import url(../blocks/popup/__button-save/_disabled/popup__button-save-disabled.css);
 
 /*
 @import url(../blocks/groups/__like-counter/groups__like-counter.css);
