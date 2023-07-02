@@ -1,3 +1,6 @@
+// НЕ ПОНИМАЮ ПОЧЕМУ popupDeleteCard НЕ АКТИВЕН, ВСЕ УЖЕ ПРОВЕРИЛ ЧЕРЕЗ КОНСОЛЬ, НЕ ПОНИМАЮ, ЕСЛИ РАБОТУ НЕ ПРИНИМАЮТ, ТО ХОТЯ БЫ ДАЙТЕ НАВОДКУ, ЧТО НЕ ТАК)
+
+
 import './index.css';
 import {
     // initialCards,
@@ -39,6 +42,8 @@ const userInfo = new UserInfo(formProfileInfo);
 // Попап для фото
 const popupImg = new PopupWithImage(".popup_type_img");
 
+
+
 function createNewCard(element) {
     const card = new Card(element, popupImg.open,popupDeleteCard.open, (like, cardId) => {
         if (like.classList.contains('groups__like_active')) {
@@ -61,7 +66,15 @@ const section = new Section((element) => {
 // Создаем экземпляр класса PopupWithForm для попапа редактирования профиля
 
 
-
+const popupDeleteCard = new PopupDeleteCard('.popup_type_delete', ({ card, cardId }) => { 
+    api.deleteCard(cardId)
+    .then(() => {
+        card.removeCard();
+        popupDeleteCard.close();
+      })
+        .catch(err => console.log(`Что-то пошло не так: ${err}`))
+        .finally(() => popupDeleteCard.renderLoading());
+});
 
 const popupEdit = new PopupWithForm(".popup_type_edit", (data) => {
     api.setUserInfo(data)
@@ -70,6 +83,7 @@ const popupEdit = new PopupWithForm(".popup_type_edit", (data) => {
                 username: res.name,
                 job: res.about,
                 avatar: res.avatar
+
             });
             console.log(res);
             popupEdit.close();
@@ -104,15 +118,7 @@ const popupAdd = new PopupWithForm('.popup_type_add', (inputValues) => {
         .finally(() => popupAdd.renderLoading());
 });
 
-const popupDeleteCard = new PopupDeleteCard('.popup_type_delete', ({ card, cardId }) => {
-    api.deleteCard(cardId)
-    .then(() => {
-        card.removeCard();
-        popupDeleteCard.close();
-      })
-        .catch(err => console.log(`Что-то пошло не так: ${err}`))
-        .finally(() => popupDeleteCard.renderLoading());
-});
+
 
 
 const formProfileValidator = new FormValidator(formEditPopup, formClassList);

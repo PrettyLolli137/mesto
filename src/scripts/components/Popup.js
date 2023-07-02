@@ -48,3 +48,12 @@ _removeEventListeners() {
     }
 
 */
+
+/*
+
+_removeEventListeners() {
+        document.removeEventListener('keydown', this._handleEscClose);
+        document.removeEventListener('click', this._handleClickClose);
+    }
+
+*/

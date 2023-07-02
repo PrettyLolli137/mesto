@@ -1,3 +1,6 @@
+// НЕ ПОНИМАЮ ПОЧЕМУ В  UserInfo ПЕРЕДАЕТСЯ ВСЕ КРОМЕ СТРОКИ JOB, ХОТЯ ПРИ ИЗМЕНЕНИИ АВАТАРА, ОНО ПОЯВЛЯЕТСЯ, ЕСЛИ РАБОТУ НЕ ПРИНИМАЮТ, ТО ХОТЯ БЫ ДАЙТЕ НАВОДКУ, ЧТО НЕ ТАК)
+
+
 export default class UserInfo {
     constructor(input) {
         this._profileName = document.querySelector(input.profileNameSelector);

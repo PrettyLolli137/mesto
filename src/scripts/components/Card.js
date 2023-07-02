@@ -1,3 +1,6 @@
+// НЕ ПОНИМАЮ ПОЧЕМУ popupDeleteCard НЕ АКТИВЕН, ВСЕ УЖЕ ПРОВЕРИЛ, НЕ ПОНИМАЮ, ЕСЛИ РАБОТУ НЕ ПРИНИМАЮТ, ТО ХОТЯ БЫ ДАЙТЕ НАВОДКУ, ЧТО НЕ ТАК)
+
+
 export default class Card {
   constructor(cardsData, handleCardClick, openDeletePopup, handleCardLike) {
       this._cardsData = cardsData;
@@ -33,7 +36,7 @@ export default class Card {
   _countLikes = () => {
     this._likes.forEach((like) => {
       if (like._id === this._myId) {
-        this._cardLikeBtn.classList.add('groups__like_active');
+        this._cardsLikeBtn.classList.add('groups__like_active');
         return
       }
     });
