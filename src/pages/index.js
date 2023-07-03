@@ -43,20 +43,20 @@ const popupImg = new PopupWithImage(".popup_type_img");
 
 
 
-function createNewCard(element) {
-    const card = new Card(element, popupImg.open,popupDeleteCard.open, (like, cardId) => {
-        if (like.classList.contains('groups__like_active')) {
-            api.likeCard(cardId)
-                .then(res => { card.toggleLike(res.likes) })
-                .catch(err => console.log(`Что-то пошло не так: ${err}`));
-        } else {
-            api.unlikeCard(cardId)
-                .then(res => { card.toggleLike(res.likes) })
-                .catch(err => console.log(`Что-то пошло не так: ${err}`));
-        }
-    });
-    return card.createCardElement();
-}
+function createNewCard(element) { 
+    const card = new Card(element, popupImg.open,popupDeleteCard.open, (like, cardId) => { 
+        if (like.classList.contains('groups__like_active')) { 
+            api.unlikeCard(cardId) 
+                .then(res => { card.toggleLike(res.likes) }) 
+                .catch(err => console.log(`Что-то пошло не так: ${err}`)); 
+        } else { 
+            api.likeCard(cardId) 
+                .then(res => { card.toggleLike(res.likes) }) 
+                .catch(err => console.log(`Что-то пошло не так: ${err}`)); 
+        } 
+    }); 
+    return card.createCardElement(); 
+} 
 
 // Отрисовка карточек
 const section = new Section((element) => {
@@ -129,11 +129,8 @@ formAddValidator.enableValidation();
 const formAvatarValidator = new FormValidator(formAvatar, formClassList);
 formAvatarValidator.enableValidation();
 
-popupImg.setEventListeners();
-popupEdit.setEventListeners();
-popupAdd.setEventListeners();
-popupAvatar.setEventListeners();
-popupDeleteCard.setEventListeners();
+
+
 // Слушатели для открытия форм
 
 
@@ -252,6 +249,7 @@ import PopupDeleteCard from '../scripts/components/PopupDeleteCard';
                 .then(res => { card.toggleLike(res.likes) })
                 .catch(err => console.log(`Что-то пошло не так: ${err}`));
         }
+
 
 
 

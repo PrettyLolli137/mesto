@@ -15,7 +15,6 @@ export default class PopupWithForm extends Popup {
         evt.preventDefault();
         this._submitBtn.textContent = `${this._submitBtn.textContent}...`
         this._submitFormFunction(this._getInputValues());
-        this.close();
     }
 
     _getInputValues() {

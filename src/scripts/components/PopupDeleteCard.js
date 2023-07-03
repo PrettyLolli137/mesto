@@ -8,17 +8,24 @@ export default class PopupDeleteCard extends Popup {
         this._form = this._popup.querySelector('.popup__form');
         this._submitBtn = this._form.querySelector('.popup__button-save');
         this._defaultSubmitText = this._submitBtn.value;
-
+        this._handleFormSubmit = this._handleFormSubmit.bind(this);
    }
 
 
-    setEventListeners() {
-        super.setEventListeners();
-        this._form.addEventListener('submit', (evt) => {
-            evt.preventDefault();
-            this._submitFormFunction({ card: this._card , cardId: this._cardId });
-        });
-    }
+   _handleFormSubmit(evt) {
+    evt.preventDefault();
+    this._submitFormFunction({ card: this._card, cardId: this._cardId });
+  }
+
+  setEventListeners() {
+    super.setEventListeners();
+    this._form.addEventListener('submit', this._handleFormSubmit);
+  }
+
+    _removeEventListeners() {
+        super._removeEventListeners();
+        this._form.removeEventListener('submit', this._handleFormSubmit);
+      }
 
     renderLoading() {
         this._submitBtn.textContent = this._defaultSubmitText
